@@ -15,9 +15,12 @@ public class UsuarioService {
     private final ModelMapper modelMapper;
 
     public void cadastro(UsuarioDTO usuario) {
-
         Usuario user = modelMapper.map(usuario, Usuario.class);
-
         usuarioRepository.save(modelMapper.map(usuario, Usuario.class));
+    }
+
+    public UsuarioDTO buscarPorEmail(String email) {
+        Usuario usuario = usuarioRepository.buscarPorEmail(email);
+        return modelMapper.map(usuario, UsuarioDTO.class);
     }
 }

@@ -16,7 +16,6 @@ public class UsuarioController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void cadastro(@RequestBody UsuarioDTO usuario) {
-
         usuarioService.cadastro(usuario);
     }
 
