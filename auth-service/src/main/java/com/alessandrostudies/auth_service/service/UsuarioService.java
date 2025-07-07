@@ -15,7 +15,6 @@ public class UsuarioService {
     private final ModelMapper modelMapper;
 
     public void cadastro(UsuarioDTO usuario) {
-        Usuario user = modelMapper.map(usuario, Usuario.class);
         usuarioRepository.save(modelMapper.map(usuario, Usuario.class));
     }
 
